@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - mark_sphere
+  - route_sphere
   layers:
   - Default
   - TransparentFX
