@@ -58,6 +58,12 @@ public class camera_fly : MonoBehaviour {
     //! needs docs
     public float mouseSensitivity = 5.0f;
     //! private float rotationY = 0.0f;
+    // trying to add collision
+    public Rigidbody rb;
+
+    void Start() {
+        rb = GetComponent<Rigidbody>();
+    }
  
     void pathLink(uint ind0, uint ind1) {
         Debug.Log("[STATUS] computing path");
@@ -165,7 +171,7 @@ public class camera_fly : MonoBehaviour {
         }
     }
 
-    void Update () {
+    void FixedUpdate () {
         if (Input.GetMouseButtonDown(0))
         {
             lastMousePosition = Input.mousePosition;
@@ -307,12 +313,19 @@ public class camera_fly : MonoBehaviour {
             //! if (!Physics.Raycast(ray,out hit,4.0f)) {
             //!     transform.Translate(p);
             //! }
-            if (!Physics.Raycast(ray,out hit,4.0f)) {
-                transform.Translate(p);
-            } else {
-                p = p - Vector3.Normalize(p) * (4.0f - hit.distance);
-                transform.Translate(p);
-            }
+
+            // THIS SORT OF WORKS
+            //! if (!Physics.Raycast(ray,out hit,1.0f)) {
+            //!     transform.Translate(p);
+            //! } else {
+            //!     p = p - Vector3.Normalize(p) * (1.0f - hit.distance);
+            //!     transform.Translate(p);
+            //! }
+            transform.Translate(p);
+            
+            /// trying with force, rigid body, sphere collider on the camera
+            // this really fails
+            //! rb.AddForce(-p.normalized * 5000f * Time.deltaTime);
         }
         // hold the object in the center of the screen to sweep the camera
         if (Input.GetKey (KeyCode.L)){
@@ -348,7 +361,6 @@ public class camera_fly : MonoBehaviour {
             var origin = new Vector3(0,0,0);
             Transform camera_t = GameObject.Find("camera").transform;
             camera_t.LookAt(origin,camera_t.up);
-
         }
     }
 

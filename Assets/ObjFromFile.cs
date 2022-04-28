@@ -67,10 +67,6 @@ public class ObjFromFile : MonoBehaviour
                         graph.Connect((uint)ind2,(uint)ind0,1,"");
                     }
                 }
-
-
-
-
             }
         }
 

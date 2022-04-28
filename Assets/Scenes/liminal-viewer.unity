@@ -227,6 +227,7 @@ MonoBehaviour:
   clicked: 
   route: 
   mouseSensitivity: 5
+  rb: {fileID: 0}
 --- !u!1 &1463673554
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +362,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871851839}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0904dfbb768b0406a9e95d704dbc423a, type: 3}
   m_Name: 
@@ -373,7 +374,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871851839}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65b4eeefbf79e40c4992c7c6c844a20d, type: 3}
   m_Name: 
