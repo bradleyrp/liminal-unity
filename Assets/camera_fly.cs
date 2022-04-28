@@ -147,7 +147,7 @@ public class camera_fly : MonoBehaviour {
         }
     }
 
-    void FixedUpdate () {
+    void Update () {
         if (Input.GetMouseButtonDown(0))
         {
             lastMousePosition = Input.mousePosition;
